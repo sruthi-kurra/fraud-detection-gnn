@@ -71,14 +71,15 @@ The resulting graph has **13,553 nodes** and **2.3 million edges**, which lets G
 
 Random Forest still wins on raw AUC and precision, but at the cost of missing nearly half of all fraud cases (recall of 0.47) — a tradeoff that matters more in some fraud-ops contexts than others.
 
-![Model Comparison]
-<img width="704" height="291" alt="image" src="https://github.com/user-attachments/assets/b5498ae6-7a5a-431c-939e-a74f4a7f5c10" />
+<img width="594" height="293" alt="image" src="https://github.com/user-attachments/assets/e84695bc-ee95-455b-bd46-23628b0f0b64" />
+
 
 ---
 
 ## 🕸️ Fraud Subgraph Visualization
 
-![Fraud Subgraph](https://github.com/sruthi-kurra/fraud-detection-gnn/raw/main/subgraph.png)
+<img width="322" height="239" alt="image" src="https://github.com/user-attachments/assets/a019f3ae-171a-4d09-87c4-a4c1f0b9f13f" />
+
 
 *Red nodes = fraudulent accounts, blue nodes = legitimate accounts. Fraud nodes visibly cluster together — this is the structural signal GraphSAGE learns to exploit.*
 
