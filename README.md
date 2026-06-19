@@ -71,7 +71,8 @@ The resulting graph has **13,553 nodes** and **2.3 million edges**, which lets G
 
 Random Forest still wins on raw AUC and precision, but at the cost of missing nearly half of all fraud cases (recall of 0.47) — a tradeoff that matters more in some fraud-ops contexts than others.
 
-![Model Comparison](https://github.com/sruthi-kurra/fraud-detection-gnn/raw/main/model_comparison.png)
+![Model Comparison]
+<img width="704" height="291" alt="image" src="https://github.com/user-attachments/assets/b5498ae6-7a5a-431c-939e-a74f4a7f5c10" />
 
 ---
 
