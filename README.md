@@ -77,7 +77,7 @@ The resulting graph has **13,553 nodes** and **2.3 million edges**, which lets G
 | XGBoost | 0.58 | 0.28 | 0.38 | 0.89 |
 | Random Forest | 0.47 | 0.91 | 0.62 | 0.94 |
 
-**Takeaway:** the GNN catches roughly 49% more fraudulent transactions than Random Forest by modeling account–merchant relationships, while matching XGBoost's AUC at a nearly doubled fraud precision compared to XGBoost while matching ROC-AUC. — meaning far fewer false-positive investigations for the same detection power.
+**Takeaway:** the GNN catches roughly 49% more fraudulent transactions than Random Forest by modeling account–merchant relationships,at nearly double XGBoost's fraud precision while matching its ROC-AUC, meaning far fewer false-positive investigations for the same detection power.
 
 Random Forest still wins on raw AUC and precision, but at the cost of missing nearly half of all fraud cases (recall of 0.47) — a tradeoff that matters more in some fraud-ops contexts than others.
 
@@ -149,13 +149,14 @@ Random Forest still wins on raw AUC and precision, but at the cost of missing ne
 ## ✍️ Author
 
 **[Sruthi Kurra](https://github.com/sruthi-kurra)**
+---
 
 ## 🎯 Resume Highlights
 
-- Built an end-to-end graph ML pipeline for fraud detection on the 590K-row IEEE-CIS dataset
-- Converted raw tabular transaction data into a relational graph (13,553 nodes, 2.3M edges) based on shared behavioral attributes
-- Implemented and trained a GraphSAGE GNN for node-level fraud classification using PyTorch Geometric
-- Benchmarked GNN performance against XGBoost and Random Forest baselines, improving fraud precision by 93% over XGBoost at matched AUC
+- Built an end-to-end graph ML pipeline for fraud detection on the 590K-row IEEE-CIS dataset.
+- Converted raw tabular transaction data into a relational graph (13,553 nodes, 2.3M edges) based on shared behavioral attributes.
+- Implemented and trained a GraphSAGE GNN for node-level fraud classification using PyTorch Geometric.
+- Benchmarked GNN performance against XGBoost and Random Forest baselines, nearly doubling fraud precision over XGBoost at matched ROC-AUC.
 
 If you find this useful or have ideas for improving it, issues and pull requests are welcome.
 
