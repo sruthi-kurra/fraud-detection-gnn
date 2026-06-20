@@ -9,6 +9,7 @@
 
 ## Table of Contents
 
+- [Highlights](#-highlights)
 - [Key Insight](#-key-insight)
 - [How It Works](#-how-it-works)
 - [Results](#-results)
@@ -19,7 +20,16 @@
 - [Tech Stack](#-tech-stack)
 - [Future Improvements](#-future-improvements)
 - [Author](#-author)
+- [Resume Highlights](#-resume-highlights)
 
+---
+## ✨ Highlights
+
+- Built a 13,553-node, 2.3M-edge transaction graph from 590K raw IEEE-CIS fraud records
+- Engineered graph edges from behavioral signals — shared email domains, merchants, and transaction patterns
+- Trained GraphSAGE for node-level fraud classification, benchmarked against XGBoost and Random Forest
+- Achieved 0.89 ROC-AUC with 0.70 fraud recall — catching ~49% more fraud than Random Forest at matched AUC
+  
 ---
 
 ## 💡 Key Insight
@@ -67,7 +77,7 @@ The resulting graph has **13,553 nodes** and **2.3 million edges**, which lets G
 | XGBoost | 0.58 | 0.28 | 0.38 | 0.89 |
 | Random Forest | 0.47 | 0.91 | 0.62 | 0.94 |
 
-**Takeaway:** the GNN catches roughly 49% more fraudulent transactions than Random Forest by modeling account–merchant relationships, while matching XGBoost's AUC at a ~93% improvement in fraud precision — meaning far fewer false-positive investigations for the same detection power.
+**Takeaway:** the GNN catches roughly 49% more fraudulent transactions than Random Forest by modeling account–merchant relationships, while matching XGBoost's AUC at a nearly doubled fraud precision compared to XGBoost while matching ROC-AUC. — meaning far fewer false-positive investigations for the same detection power.
 
 Random Forest still wins on raw AUC and precision, but at the cost of missing nearly half of all fraud cases (recall of 0.47) — a tradeoff that matters more in some fraud-ops contexts than others.
 
@@ -78,7 +88,7 @@ Random Forest still wins on raw AUC and precision, but at the cost of missing ne
 
 ## 🕸️ Fraud Subgraph Visualization
 
-<img width="322" height="239" alt="image" src="https://github.com/user-attachments/assets/a019f3ae-171a-4d09-87c4-a4c1f0b9f13f" />
+
 
 
 *Red nodes = fraudulent accounts, blue nodes = legitimate accounts. Fraud nodes visibly cluster together — this is the structural signal GraphSAGE learns to exploit.*
@@ -140,6 +150,13 @@ Random Forest still wins on raw AUC and precision, but at the cost of missing ne
 ## ✍️ Author
 
 **[Sruthi Kurra](https://github.com/sruthi-kurra)**
+
+## 🎯 Resume Highlights
+
+- Built an end-to-end graph ML pipeline for fraud detection on the 590K-row IEEE-CIS dataset
+- Converted raw tabular transaction data into a relational graph (13,553 nodes, 2.3M edges) based on shared behavioral attributes
+- Implemented and trained a GraphSAGE GNN for node-level fraud classification using PyTorch Geometric
+- Benchmarked GNN performance against XGBoost and Random Forest baselines, improving fraud precision by 93% over XGBoost at matched AUC
 
 If you find this useful or have ideas for improving it, issues and pull requests are welcome.
 
