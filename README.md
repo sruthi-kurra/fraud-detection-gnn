@@ -149,6 +149,7 @@ Random Forest still wins on raw AUC and precision, but at the cost of missing ne
 ## ✍️ Author
 
 **[Sruthi Kurra](https://github.com/sruthi-kurra)**
+
 ---
 
 ## 🎯 Resume Highlights
