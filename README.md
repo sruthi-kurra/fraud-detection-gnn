@@ -77,7 +77,7 @@ The resulting graph has **13,553 nodes** and **2.3 million edges**, which lets G
 | XGBoost | 0.58 | 0.28 | 0.38 | 0.89 |
 | Random Forest | 0.47 | 0.91 | 0.62 | 0.94 |
 
-**Takeaway:** the GNN catches roughly 49% more fraudulent transactions than Random Forest by modeling account–merchant relationships,at nearly double XGBoost's fraud precision while matching its ROC-AUC, meaning far fewer false-positive investigations for the same detection power.
+**Takeaway:** the GNN catches roughly 49% more fraudulent transactions than Random Forest by modeling account–merchant relationships, while achieving nearly 2× XGBoost’s fraud precision at the same ROC-AUC, meaning far fewer false-positive investigations for the same detection power.
 
 Random Forest still wins on raw AUC and precision, but at the cost of missing nearly half of all fraud cases (recall of 0.47) — a tradeoff that matters more in some fraud-ops contexts than others.
 
