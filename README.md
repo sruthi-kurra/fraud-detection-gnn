@@ -88,8 +88,7 @@ Random Forest still wins on raw AUC and precision, but at the cost of missing ne
 
 ## 🕸️ Fraud Subgraph Visualization
 
-
-
+<img width="1408" height="1208" alt="subgraph" src="https://github.com/user-attachments/assets/b289a490-10f0-4d15-a556-5cc561096d53" />
 
 *Red nodes = fraudulent accounts, blue nodes = legitimate accounts. Fraud nodes visibly cluster together — this is the structural signal GraphSAGE learns to exploit.*
 
