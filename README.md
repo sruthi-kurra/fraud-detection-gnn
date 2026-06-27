@@ -1,4 +1,4 @@
-# 🔍 Fraud Detection with Graph Neural Networks
+# Fraud Detection with Graph Neural Networks
 
 > Detecting fraudulent transactions by modeling account relationships as a graph — built with GraphSAGE on the IEEE-CIS dataset (590K real transactions).
 
@@ -24,7 +24,8 @@
 - [Resume Highlights](#-resume-highlights)
 
 ---
-## ✨ Highlights
+
+## Highlights
 
 - Built a 13,553-node, 2.3M-edge transaction graph from 590K raw IEEE-CIS fraud records
 - Engineered graph edges from behavioral signals — shared email domains, merchants, and transaction patterns
@@ -33,7 +34,7 @@
   
 ---
 
-## 💡 Key Insight
+## Key Insight
 
 Fraudsters don't operate in isolation — they reuse the same email domains, billing addresses, and merchants across multiple stolen cards.
 
@@ -46,7 +47,7 @@ By representing accounts, devices, and merchants as a connected graph instead of
 
 ---
 
-## 🏗️ How It Works
+## How It Works
 
 ```mermaid
 flowchart LR
@@ -62,7 +63,7 @@ flowchart LR
     F --> E
 ```
 
-## 🏗️ Graph Construction
+## Graph Construction
 Transactions are converted into a graph where:
 - **Nodes** represent customer accounts
 - **Edges** connect accounts that share behavioral signals — email domains, merchants, or transaction patterns
@@ -71,7 +72,7 @@ The resulting graph has **13,553 nodes** and **2.3 million edges**, which lets G
 
 ---
 
-## ⚖️ Class Imbalance Handling
+## Class Imbalance Handling
 The dataset is highly imbalanced, with fraud representing **3.5% of transactions**
 and **12.8% of graph-level account nodes** after graph construction.
 To improve minority-class detection, GraphSAGE was trained using weighted
@@ -83,7 +84,7 @@ accuracy, since accuracy can be misleading under heavy class imbalance.
 
 ---
 
-## 📊 Results
+## Results
 
 | Model | Fraud Recall | Fraud Precision | Fraud F1 | AUC-ROC |
 |---|---|---|---|---|
@@ -97,10 +98,9 @@ Random Forest still wins on raw AUC and precision, but at the cost of missing ne
 
 <img width="594" height="293" alt="image" src="https://github.com/user-attachments/assets/e84695bc-ee95-455b-bd46-23628b0f0b64" />
 
-
 ---
 
-## 🕸️ Fraud Subgraph Visualization
+## Fraud Subgraph Visualization
 
 <img width="1408" height="1208" alt="subgraph" src="https://github.com/user-attachments/assets/b289a490-10f0-4d15-a556-5cc561096d53" />
 
@@ -108,7 +108,7 @@ Random Forest still wins on raw AUC and precision, but at the cost of missing ne
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 | Notebook | Description |
 |---|---|
@@ -119,7 +119,7 @@ Random Forest still wins on raw AUC and precision, but at the cost of missing ne
 
 ---
 
-## 📦 Dataset
+## Dataset
 
 **[IEEE-CIS Fraud Detection](https://www.kaggle.com/c/ieee-fraud-detection)** — Kaggle, provided by Vesta Corporation
 
@@ -129,7 +129,7 @@ Random Forest still wins on raw AUC and precision, but at the cost of missing ne
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 1. **Clone the repo**
    ```bash
@@ -141,17 +141,17 @@ Random Forest still wins on raw AUC and precision, but at the cost of missing ne
 4. **Upload the dataset** when prompted in the first notebook
 5. **Run all cells top to bottom**
 
-> 💡 The graph construction and GNN training steps are the most memory-intensive — a GPU runtime (e.g. Colab's free tier) is recommended for `03_gnn_model.ipynb`.
+> The graph construction and GNN training steps are the most memory-intensive — a GPU runtime (e.g. Colab's free tier) is recommended for `03_gnn_model.ipynb`.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 `Python` · `PyTorch Geometric` · `XGBoost` · `scikit-learn` · `NetworkX` · `pandas` · `matplotlib`
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 - [ ] Swap GraphSAGE for a heterogeneous GNN (e.g. HGT or HAN) to model account, device, and merchant nodes as distinct types instead of collapsing them into one graph
 - [ ] Add edge features (transaction amount, time delta) instead of relying solely on shared-attribute edges
@@ -160,19 +160,9 @@ Random Forest still wins on raw AUC and precision, but at the cost of missing ne
 
 ---
 
-## ✍️ Author
-
-**[Sruthi Kurra](https://github.com/sruthi-kurra)**
-
----
-
-## 🎯 Resume Highlights
+## Resume Highlights
 
 - Built an end-to-end graph ML pipeline for fraud detection on the 590K-row IEEE-CIS dataset.
 - Converted raw tabular transaction data into a relational graph (13,553 nodes, 2.3M edges) based on shared behavioral attributes.
 - Implemented and trained a GraphSAGE GNN for node-level fraud classification using PyTorch Geometric.
 - Benchmarked GNN performance against XGBoost and Random Forest baselines, nearly doubling fraud precision over XGBoost at matched ROC-AUC.
-
-If you find this useful or have ideas for improving it, issues and pull requests are welcome.
-
-
