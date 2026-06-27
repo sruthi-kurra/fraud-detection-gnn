@@ -62,7 +62,8 @@ flowchart LR
     F --> E
 ```
 
-**Graph construction.** Transactions are converted into a graph where:
+## 🏗️ Graph Construction
+Transactions are converted into a graph where:
 - **Nodes** represent customer accounts
 - **Edges** connect accounts that share behavioral signals — email domains, merchants, or transaction patterns
 
