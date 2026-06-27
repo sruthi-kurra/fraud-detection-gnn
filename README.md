@@ -20,7 +20,6 @@
 - [Getting Started](#-getting-started)
 - [Tech Stack](#-tech-stack)
 - [Future Improvements](#-future-improvements)
-- [Author](#-author)
 - [Resume Highlights](#-resume-highlights)
 
 ---
