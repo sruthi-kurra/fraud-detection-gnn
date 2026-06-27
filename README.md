@@ -20,7 +20,6 @@
 - [Getting Started](#-getting-started)
 - [Tech Stack](#-tech-stack)
 - [Future Improvements](#-future-improvements)
-- [Resume Highlights](#-resume-highlights)
 
 ---
 
@@ -61,13 +60,17 @@ flowchart LR
     Random Forest"]
     F --> E
 ```
-
 ## Graph Construction
-Transactions are converted into a graph where:
-- **Nodes** represent customer accounts
-- **Edges** connect accounts that share behavioral signals — email domains, merchants, or transaction patterns
 
-The resulting graph has **13,553 nodes** and **2.3 million edges**, which lets GraphSAGE learn from each account's neighborhood rather than treating every transaction as independent.
+The original IEEE-CIS dataset is purely tabular, with each row representing an individual transaction. To enable graph learning, transactions were transformed into an account-level graph.
+
+- **Nodes** represent customer accounts (`card1`)
+- **Edges** connect accounts sharing behavioral signals such as email domains, billing regions, merchants, or suspicious transaction patterns
+- **Node features** include 10 engineered transaction and identity attributes aggregated at the account level
+
+This converts 590K independent transaction rows into a relational graph with **13,553 nodes** and **2.3M edges**.
+
+The motivation is that fraud often appears as coordinated behavior rather than isolated anomalies. Fraudsters frequently reuse devices, merchants, email domains, and billing information across multiple stolen cards, forming localized fraud rings that GNNs can detect through neighborhood structure.
 
 ---
 
@@ -135,10 +138,14 @@ Random Forest still wins on raw AUC and precision, but at the cost of missing ne
    git clone https://github.com/sruthi-kurra/fraud-detection-gnn.git
    ```
 2. **Get the data** — download `ieee-fraud-detection.zip` from [Kaggle](https://www.kaggle.com/c/ieee-fraud-detection) (requires a free Kaggle account)
-3. **Open the notebooks in order**, either locally in Jupyter or in [Google Colab](https://colab.research.google.com/):
+3. **Install dependencies**
+```bash
+   pip install -r requirements.txt
+```
+4. **Open the notebooks in order**, either locally in Jupyter or in [Google Colab](https://colab.research.google.com/):
    - `01_data_loading.ipynb` → `02_graph_construction.ipynb` → `03_gnn_model.ipynb` → `04_baselines.ipynb`
-4. **Upload the dataset** when prompted in the first notebook
-5. **Run all cells top to bottom**
+5. **Upload the dataset** when prompted in the first notebook
+6. **Run all cells top to bottom**
 
 > The graph construction and GNN training steps are the most memory-intensive — a GPU runtime (e.g. Colab's free tier) is recommended for `03_gnn_model.ipynb`.
 
@@ -152,16 +159,5 @@ Random Forest still wins on raw AUC and precision, but at the cost of missing ne
 
 ## Future Improvements
 
-- [ ] Swap GraphSAGE for a heterogeneous GNN (e.g. HGT or HAN) to model account, device, and merchant nodes as distinct types instead of collapsing them into one graph
-- [ ] Add edge features (transaction amount, time delta) instead of relying solely on shared-attribute edges
 - [ ] Tune the classification threshold per-model to directly compare precision/recall at matched operating points
 - [ ] Package the trained GraphSAGE model behind a simple inference script for scoring new transactions
-
----
-
-## Resume Highlights
-
-- Built an end-to-end graph ML pipeline for fraud detection on the 590K-row IEEE-CIS dataset.
-- Converted raw tabular transaction data into a relational graph (13,553 nodes, 2.3M edges) based on shared behavioral attributes.
-- Implemented and trained a GraphSAGE GNN for node-level fraud classification using PyTorch Geometric.
-- Benchmarked GNN performance against XGBoost and Random Forest baselines, nearly doubling fraud precision over XGBoost at matched ROC-AUC.
