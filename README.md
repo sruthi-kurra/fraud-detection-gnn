@@ -12,6 +12,7 @@
 - [Highlights](#-highlights)
 - [Key Insight](#-key-insight)
 - [How It Works](#-how-it-works)
+- [Class Imbalance Handling](#-class-imbalance-handling)
 - [Results](#-results)
 - [Fraud Subgraph Visualization](#-fraud-subgraph-visualization)
 - [Project Structure](#-project-structure)
