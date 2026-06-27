@@ -69,6 +69,18 @@ The resulting graph has **13,553 nodes** and **2.3 million edges**, which lets G
 
 ---
 
+## ⚖️ Class Imbalance Handling
+The dataset is highly imbalanced, with fraud representing **3.5% of transactions**
+and **12.8% of graph-level account nodes** after graph construction.
+To improve minority-class detection, GraphSAGE was trained using weighted
+CrossEntropyLoss with a fraud class weight of **4.75×** relative to the
+legitimate class. This was tuned down from the inverse-frequency ratio
+(**6.79×**) to better balance fraud precision and recall.
+Evaluation emphasized fraud recall, F1-score, and ROC-AUC rather than raw
+accuracy, since accuracy can be misleading under heavy class imbalance. 
+
+---
+
 ## 📊 Results
 
 | Model | Fraud Recall | Fraud Precision | Fraud F1 | AUC-ROC |
