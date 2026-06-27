@@ -12,6 +12,7 @@
 - [Highlights](#-highlights)
 - [Key Insight](#-key-insight)
 - [How It Works](#-how-it-works)
+- [Graph Construction](#graph-construction)
 - [Class Imbalance Handling](#-class-imbalance-handling)
 - [Results](#-results)
 - [Fraud Subgraph Visualization](#-fraud-subgraph-visualization)
@@ -60,6 +61,7 @@ flowchart LR
     Random Forest"]
     F --> E
 ```
+---
 ## Graph Construction
 
 The original IEEE-CIS dataset is purely tabular, with each row representing an individual transaction. To enable graph learning, transactions were transformed into an account-level graph.
@@ -139,9 +141,9 @@ Random Forest still wins on raw AUC and precision, but at the cost of missing ne
    ```
 2. **Get the data** — download `ieee-fraud-detection.zip` from [Kaggle](https://www.kaggle.com/c/ieee-fraud-detection) (requires a free Kaggle account)
 3. **Install dependencies**
-   ```bash
+```bash
    pip install -r requirements.txt
-   ```
+```
 4. **Open the notebooks in order**, either locally in Jupyter or in [Google Colab](https://colab.research.google.com/):
    - `01_data_loading.ipynb` → `02_graph_construction.ipynb` → `03_gnn_model.ipynb` → `04_baselines.ipynb`
 5. **Upload the dataset** when prompted in the first notebook
