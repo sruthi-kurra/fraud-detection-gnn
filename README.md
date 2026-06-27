@@ -9,18 +9,18 @@
 
 ## Table of Contents
 
-- [Highlights](#-highlights)
-- [Key Insight](#-key-insight)
-- [How It Works](#-how-it-works)
+- [Highlights](#highlights)
+- [Key Insight](#key-insight)
+- [How It Works](#how-it-works)
 - [Graph Construction](#graph-construction)
-- [Class Imbalance Handling](#-class-imbalance-handling)
-- [Results](#-results)
-- [Fraud Subgraph Visualization](#-fraud-subgraph-visualization)
-- [Project Structure](#-project-structure)
-- [Dataset](#-dataset)
-- [Getting Started](#-getting-started)
-- [Tech Stack](#-tech-stack)
-- [Future Improvements](#-future-improvements)
+- [Class Imbalance Handling](#class-imbalance-handling)
+- [Results](#results)
+- [Fraud Subgraph Visualization](#fraud-subgraph-visualization)
+- [Project Structure](#project-structure)
+- [Dataset](#dataset)
+- [Getting Started](#getting-started)
+- [Tech Stack](#tech-stack)
+- [Future Improvements](#future-improvements)
 
 ---
 
@@ -61,7 +61,9 @@ flowchart LR
     Random Forest"]
     F --> E
 ```
+
 ---
+
 ## Graph Construction
 
 The original IEEE-CIS dataset is purely tabular, with each row representing an individual transaction. To enable graph learning, transactions were transformed into an account-level graph.
